@@ -15,14 +15,27 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
+import io.vertx.core.MultiMap;
 import java.io.IOException;
+import java.util.Set;
 
 public class MainVerticle extends AbstractVerticle {
 
+  private String convert_headers_to_string(MultiMap headers) {
+      StringBuffer buf = new StringBuffer();
+      Set<String> names = headers.names();
+      for(String s : names) {
+          String value = headers.get(s);
+          buf.append(s + " : " + value + "\n");
+      }
+      return buf.toString();
+  }
+  
   public void my_stream_handle(RoutingContext ctx) {
     ctx.response().setStatusCode(200);
     final String ctype = ctx.request().headers().get("Content-Type");
     String xmlMsg = "";
+    String headerDump = convert_headers_to_string(ctx.request().headers());
     if ( ctype != null && ctype.toLowerCase().contains("xml"))
       xmlMsg = " (XML) ";
     final String xmlMsg2 = xmlMsg;
@@ -33,7 +46,7 @@ public class MainVerticle extends AbstractVerticle {
       });
     } else {
       ctx.response().setChunked(true);
-      ctx.response().write("Hello " + xmlMsg2);
+      ctx.response().write("Hello " + xmlMsg2 + "\n" + headerDump);
       ctx.request().handler(x -> {
         ctx.response().write(x);
       });
