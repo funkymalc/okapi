@@ -6,8 +6,16 @@
 #
 # Use for development or testing.  Not suitable for production 
 
-FROM maven:3.3.3-jdk-8-onbuild
+FROM maven:3-jdk-8
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+ADD . /usr/src/app
+
+RUN mvn install -DskipTests=True
+
 CMD ["mvn","exec:exec"]
 
 # okapi core 
-EXPOSE 9130
+#EXPOSE 9130
