@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0   http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.folio.okapi</groupId>
   <artifactId>okapi</artifactId>
   <packaging>pom</packaging>
-  <version>0.4-SNAPSHOT</version>
+  <version>0.4</version>
   <name>okapi</name>
 
   <modules>
@@ -123,7 +120,7 @@
         <configuration>
           <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
           <!-- <dateFormatTimeZone>${user.timezone}</dateFormatTimeZone> -->
-          <dateFormatTimeZone>UTC</dateFormatTimeZone> -->
+          <dateFormatTimeZone>UTC</dateFormatTimeZone> --&gt;
           <verbose>false</verbose>
           <generateGitPropertiesFile>true</generateGitPropertiesFile>
           <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
@@ -186,6 +183,7 @@
     <url>https://github.com/funkymalc/okapi</url>
     <connection>scm:git:git://github.com:funkymalc/okapi.git</connection>
     <developerConnection>scm:git:git@github.com:funkymalc/okapi.git</developerConnection>
+    <tag>v0.4</tag>
   </scm>
 
   <distributionManagement>
