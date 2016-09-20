@@ -5,7 +5,7 @@
   <groupId>org.folio.okapi</groupId>
   <artifactId>okapi</artifactId>
   <packaging>pom</packaging>
-  <version>0.5-SNAPSHOT</version>
+  <version>0.4</version>
   <name>okapi</name>
 
   <modules>
@@ -183,7 +183,7 @@
     <url>https://github.com/funkymalc/okapi</url>
     <connection>scm:git:git://github.com:funkymalc/okapi.git</connection>
     <developerConnection>scm:git:git@github.com:funkymalc/okapi.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v0.4</tag>
   </scm>
 
   <distributionManagement>
