@@ -167,15 +167,6 @@
           <localCheckout>true</localCheckout>
         </configuration>
       </plugin>
-
-      <plugin>
-         <artifactId>maven-scm-plugin</artifactId>
-         <version>1.8.1</version>
-         <configuration>
-          <tag>${project.artifactId}-${project.version}</tag>
-          </configuration>
-       </plugin>
-
     </plugins>
   </build>
 
@@ -190,7 +181,7 @@
     <repository>
       <id>folio-nexus</id>
       <name>FOLIO Release Repository</name>
-      <url>https://folio-nexus.indexdata.com/repository/maven-releases/</url>
+      <url>https://repository.folio.org/repository/maven-releases/</url>
       <uniqueVersion>false</uniqueVersion>
       <layout>default</layout>
     </repository>
@@ -198,7 +189,7 @@
       <id>folio-nexus</id>
       <name>FOLIO Snapshot Repository</name>
       <uniqueVersion>true</uniqueVersion>
-      <url>https://folio-nexus.indexdata.com/repository/maven-snapshots/</url>
+      <url>https://repository.folio.org/repository/maven-snapshots/</url>
       <layout>default</layout>
     </snapshotRepository>
   </distributionManagement>
